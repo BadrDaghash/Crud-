@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <h1 class="text-white text-center mt-5">CRUD APPLICATION</h1>
+        <div class="d-flex"> <i class="fa-solid fa-code fa-2xl text-white me-3" style="margin-top: 30px;"></i>
+            <h2 class="h3 text-white text-center mt-3">WITH HTML, CSS, JS</h2>
+        </div>
+    </div>
+    <div class="div w-75 mx-auto py-5 ">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control border-0 border-bottom input" oninput="validateInputs(this)"
+                id="productName" placeholder="product Name">
+            <div class="alert alert-danger mt-2 py-1 d-none">
+                <p>Product name must start with uppercase letter followed by 2 to 8 lowercase letters.</p>
+            </div>
+            <label for="productName">Product Name:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control border-0 border-bottom input" oninput="validateInputs(this)"
+                id="productPrice" placeholder="product Price">
+            <div class="alert alert-danger mt-2 py-1 d-none">
+                <p>Product price must be a three-digit number starting with a non-zero digit.</p>
+            </div>
+            <label for="productPrice">Product Price:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input list="categories" type="text" class="form-control border-0 border-bottom input"
+                oninput="validateInputs(this)" id="productCategory" placeholder="product category">
+            <div class="alert alert-danger mt-2 py-1 d-none">
+                <p>Product name must start with uppercase</p>
+            </div>
+            <label for="productCategory">Product Category:</label>
+            <div class="alert alert-danger mt-2 py-1 d-none">
+                <p>Product category must be one of: Mobile, Tv, Laptop, or Watch.</p>
+            </div>
+            <datalist id="categories">
+                <option value="TV"></option>
+                <option value="Mobile"></option>
+                <option value="Laptop"></option>
+                <option value="Watch"></option>
+            </datalist>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea type="number" class="form-control border-0 border-bottom input" oninput="validateInputs(this)"
+                id="productDesc" placeholder="product description"></textarea>
+            <div class="alert alert-danger mt-2 py-1 d-none">
+                <p>Product description must be 1 to 15 characters long.</p>
+            </div>
+            <label for="productDesc">Product Description:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input accept="image/*" type="file" class="form-control border-0 border-bottom input" id="productImage"
+                placeholder="product Image">
+            <label for="productImage">Product Image:</label>
+        </div>
+        <button class="btn btn-danger text-white rounded-0 mb-3" id="addProduct">Add Product</button>
+        <button class="btn btn-primary text-white rounded-0 mb-3 d-none" id="updateProduct">Update Product</button>
+        <input type="search" placeholder="Search by name ..." class="form-control border-0 border-bottom py-3" name=""
+            id="searchInput">
+
+        <section class="container">
+            <div class="row py-5" id="rowData">
+
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
